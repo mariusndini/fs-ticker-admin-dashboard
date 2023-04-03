@@ -24,7 +24,6 @@ def check_email(e):
     try:
         validation = email_validator.validate_email(email = e)
         if(validation.domain == 'snowflake.com'):
-            st.write (validation.domain)
             return True
         else:
             st.write("Only Valid Snowflake Accounts are Allowed.")
@@ -40,15 +39,20 @@ def check_email(e):
 st.title('Ticker Admin Dashboard')
 st.text('Please use the inputs below to gain access to the Ticker Snowflake account.')
 
-text_input = st.text_input(
+uname_input = st.text_input(
+        "Enter your desired user name 👇",
+        placeholder = "Your Snowflake Username (NO SPACES)"
+    )
+
+email_input = st.text_input(
         "Enter your Snowflake E-Mail👇",
         placeholder = "Only Valid Snowflake E-Mails Allowed"
     )
 
 if st.button('GO!'):
-    valid_email = check_email(text_input)
+    valid_email = check_email(email_input)
     if valid_email==True:
-        run_query( f' CALL admin.public.create_new_user(\'{text_input}\'); ' )
+        run_query( f' CALL admin.public.create_new_user(\'{email_input}\'); ' )
 
     else:
         st.write(f'VALID EMAIL: {valid_email}')
