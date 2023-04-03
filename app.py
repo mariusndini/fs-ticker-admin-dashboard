@@ -18,5 +18,5 @@ def run_query(query):
         return cur.fetchall()
 
 
-st.title('This is a title')
-st.title('A title with _italics_ :blue[colors] and emojis :sunglasses:')
+st.title('Ticker Admin Dashboard')
+st.text('Please use the inputs below to gain access to the Ticker Snowflake account.')
