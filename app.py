@@ -23,7 +23,7 @@ def run_query(query):
 def check_email(e):
     try:
         validation = email_validator.validate_email(email = e)
-        st.write (validation)
+        st.write (validation.domain)
         return True
     except email_validator.EmailNotValidError as e:
           st.write(str(e))
