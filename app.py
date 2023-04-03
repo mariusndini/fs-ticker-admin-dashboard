@@ -39,11 +39,6 @@ def check_email(e):
 st.title('Ticker Admin Dashboard')
 st.text('Please use the inputs below to gain access to the Ticker Snowflake account.')
 
-uname_input = st.text_input(
-        "Enter your desired user name 👇",
-        placeholder = "Your Snowflake Username (NO SPACES)"
-    )
-
 email_input = st.text_input(
         "Enter your Snowflake E-Mail👇",
         placeholder = "Only Valid Snowflake E-Mails Allowed"
