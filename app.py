@@ -1,6 +1,6 @@
 import streamlit as st
 import snowflake.connector
-import email.utils
+from email_validator import validate_email, EmailNotValidError
 
 
 
@@ -21,12 +21,8 @@ def run_query(query):
         return cur.fetchall()
 
 def check_email(e):
-    addr = email.utils.parseaddr(f'First Name <{e}>')
-    domain = addr.split('@')[1]
-    if domain == "snowflake.com":
-        return True
-    else:
-        return False
+    return validate_email(email = e, domain = 'snowflake.com')
+    
 
 st.title('Ticker Admin Dashboard')
 st.text('Please use the inputs below to gain access to the Ticker Snowflake account.')
