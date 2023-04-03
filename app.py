@@ -23,8 +23,13 @@ def run_query(query):
 def check_email(e):
     try:
         validation = email_validator.validate_email(email = e)
-        st.write (validation.domain)
-        return True
+        if(validation.domain == 'snowflake.com'):
+            st.write (validation.domain)
+            return True
+        else:
+            st.write("Only Valid Snowflake Accounts are Allowed.")
+            return False
+        
     except email_validator.EmailNotValidError as e:
           st.write(str(e))
           return False
