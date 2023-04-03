@@ -21,7 +21,7 @@ def run_query(query):
         return cur.fetchall()
 
 def check_email(e):
-    addr = email.utils.parseaddr(e)
+    addr = email.utils.parseaddr(f'First Name <{e}>')
     domain = addr.split('@')[1]
     if domain == "snowflake.com":
         return True
