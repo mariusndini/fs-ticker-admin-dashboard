@@ -48,9 +48,9 @@ text_input = st.text_input(
 if st.button('GO!'):
     valid_email = check_email(text_input)
     if valid_email==True:
-        run_query( f' CALL admin.public.create_new_user(\'${text_input}\'); ' )
+        run_query( f' CALL admin.public.create_new_user(\'{text_input}\'); ' )
 
     else:
-        st.write(f'VALID EMAIL: ${valid_email}')
+        st.write(f'VALID EMAIL: {valid_email}')
 
 
