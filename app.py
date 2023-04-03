@@ -47,7 +47,7 @@ email_input = st.text_input(
 if st.button('GO!'):
     valid_email = check_email(email_input)
     if valid_email==True:
-        run_query( f' CALL admin.public.create_new_user(\'{email_input}\'); ' )
+        run_query( f' CALL admin.public.create_new_user(\'{email_input.upper()}\'); ' )
         st.write('Please Check your E-Mail for access. \n Please do wait 5 minutes for the E-Mail.')
     else:
         st.write(f'VALID EMAIL: {valid_email}')
