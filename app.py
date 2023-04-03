@@ -1,6 +1,6 @@
 import streamlit as st
 import snowflake.connector
-from email_validator import validate_email, EmailNotValidError
+import email_validator
 
 
 
@@ -21,7 +21,7 @@ def run_query(query):
         return cur.fetchall()
 
 def check_email(e):
-    return validate_email(email = e, domain = 'snowflake.com')
+    return email_validator.validate_email(email = e, domain = 'snowflake.com')
     
 
 st.title('Ticker Admin Dashboard')
