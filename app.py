@@ -34,9 +34,7 @@ st.text('Please use the inputs below to gain access to the Ticker Snowflake acco
 
 text_input = st.text_input(
         "Enter your SNOWFLAKE E-Mail👇",
-        label_visibility = st.session_state.visibility,
-        disabled = st.session_state.disabled,
-        placeholder = "Only Valid Snowflake E-Mails Allowed",
+        placeholder = "Only Valid Snowflake E-Mails Allowed"
     )
 
 if st.button('GO!'):
