@@ -37,7 +37,9 @@ def check_email(e):
     
 
 st.title('Ticker Admin Dashboard')
-st.text('Please use the inputs below to gain access to the Ticker Snowflake account.')
+st.text('Please Enter your Email below to gain access to the Ticker Snowflake account.')
+st.text('Please note that the script uses CREATE OR REPLACE USER to assign access.')
+st.text('After providig your email. Your credentials will be emailed to your Snowflake Email')
 
 email_input = st.text_input(
         "Enter your Snowflake E-Mail👇",
