@@ -21,7 +21,7 @@ def run_query(query):
         return cur.fetchall()
 
 def check_email(e):
-    return email_validator.validate_email(email = e, domain = 'snowflake.com')
+    return email_validator.validate_email(email = e)
     
 
 st.title('Ticker Admin Dashboard')
