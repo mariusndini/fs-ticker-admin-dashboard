@@ -21,7 +21,15 @@ def run_query(query):
         return cur.fetchall()
 
 def check_email(e):
-    return email_validator.validate_email(email = e)
+    try:
+        validation = email_validator.validate_email(email = e)
+        print (validation)
+        return True
+    except email_validator.EmailNotValidError as e:
+          print(str(e))
+          return False
+
+
     
 
 st.title('Ticker Admin Dashboard')
